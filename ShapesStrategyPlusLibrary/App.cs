@@ -1,4 +1,8 @@
-﻿using MyClassLibrary;
+﻿using Calculations;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using MyClassLibrary;
+using RockPaperScissors;
 using Shapes;
 using System;
 using System.Collections.Generic;
@@ -38,28 +42,43 @@ namespace ShapesStrategyPlusLibrary
 
         private void goSection(string? userAnswer)
         {
-            switch (userAnswer)
+            try
             {
-                case "1":
-                    var goShapesMenu = new ShapesMenu(_dbContext);
-                    goShapesMenu.ShowShapesMenu();
-                    //Console.ReadLine();
-                    break;
-                case "2":
-                    Console.WriteLine("These are not the droids you are looking for!");
-                    Console.ReadLine();
-                    break;
-                case "3":
-                    Console.WriteLine("Nothing to see here... move along");
-                    Console.ReadLine();
-                    break;
-                case "0":
-                    Console.WriteLine("Case 0");
-                    Console.ReadLine();
-                    break;
-                default:
-                    break;
+                switch (userAnswer)
+                {
+                    case "1":
+                        var goShapesMenu = new ShapesMenu(_dbContext);
+                        goShapesMenu.ShowShapesMenu();
+                        //Console.ReadLine();
+                        break;
+                    case "2":
+                        //Console.WriteLine("These are not the droids you are looking for!");
+                        //Console.ReadLine();
+                        var goCalculationsMenu = new CalculationsMenu(_dbContext);
+                        goCalculationsMenu.ShowCalculationsMenu();
+                        break;
+                    case "3":
+                        var goRockPaperScissorsMenu = new RockPaperScissorsMenu(_dbContext);
+                        goRockPaperScissorsMenu.ShowRockPaperScissorsMenu();
+                        break;
+                    case "0":
+                        Console.WriteLine("Case 0");
+                        Console.ReadLine();
+                        break;
+                    default:
+                        break;
+                }
             }
+            catch
+            {
+                Console.WriteLine("Ogiltig inmatning!");
+
+                Console.WriteLine("Tryck på valfri tangent för att gå vidare.");
+                Console.ReadLine();
+            }
+
+
+            
         }
     }
 }

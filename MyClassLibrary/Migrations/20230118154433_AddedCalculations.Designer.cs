@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyClassLibrary;
 
@@ -11,9 +12,10 @@ using MyClassLibrary;
 namespace MyClassLibrary.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230118154433_AddedCalculations")]
+    partial class AddedCalculations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,30 +51,6 @@ namespace MyClassLibrary.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CalculationResults");
-                });
-
-            modelBuilder.Entity("MyClassLibrary.Models.RockPaperScissorsResult", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("CurrentWinRatio")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("WinOrLoss")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RockPaperScissorsResults");
                 });
 
             modelBuilder.Entity("MyClassLibrary.Models.ShapeResult", b =>
@@ -117,7 +95,7 @@ namespace MyClassLibrary.Migrations
                         {
                             Id = 1,
                             Area = 2.0,
-                            Date = new DateTime(2023, 1, 18, 18, 30, 19, 228, DateTimeKind.Local).AddTicks(9334),
+                            Date = new DateTime(2023, 1, 18, 16, 44, 32, 990, DateTimeKind.Local).AddTicks(1623),
                             Input1 = 1.0,
                             Input2 = 2.0,
                             Input3 = 0.0,
@@ -129,7 +107,7 @@ namespace MyClassLibrary.Migrations
                         {
                             Id = 2,
                             Area = 1.73,
-                            Date = new DateTime(2023, 1, 18, 18, 30, 19, 228, DateTimeKind.Local).AddTicks(9373),
+                            Date = new DateTime(2023, 1, 18, 16, 44, 32, 990, DateTimeKind.Local).AddTicks(1661),
                             Input1 = 2.0,
                             Input2 = 2.0,
                             Input3 = 2.0,
@@ -141,7 +119,7 @@ namespace MyClassLibrary.Migrations
                         {
                             Id = 3,
                             Area = 4.0,
-                            Date = new DateTime(2023, 1, 18, 18, 30, 19, 228, DateTimeKind.Local).AddTicks(9375),
+                            Date = new DateTime(2023, 1, 18, 16, 44, 32, 990, DateTimeKind.Local).AddTicks(1664),
                             Input1 = 1.0,
                             Input2 = 2.0,
                             Input3 = 1.0,
@@ -153,7 +131,7 @@ namespace MyClassLibrary.Migrations
                         {
                             Id = 4,
                             Area = 2.0,
-                            Date = new DateTime(2023, 1, 18, 18, 30, 19, 228, DateTimeKind.Local).AddTicks(9378),
+                            Date = new DateTime(2023, 1, 18, 16, 44, 32, 990, DateTimeKind.Local).AddTicks(1666),
                             Input1 = 1.0,
                             Input2 = 2.0,
                             Input3 = 0.0,

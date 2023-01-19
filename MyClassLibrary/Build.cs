@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace MyClassLibrary
@@ -23,7 +25,9 @@ namespace MyClassLibrary
                 dbContext.Database.Migrate();
             }
 
+
             var dbContextReturned = new ApplicationDbContext(options.Options);
+
             return dbContextReturned;
         }
     }
