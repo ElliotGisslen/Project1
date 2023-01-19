@@ -28,7 +28,7 @@ namespace Calculations
             Console.WriteLine("4: Division(/)");
             Console.WriteLine("5. Lista alla uträkningar");
             Console.WriteLine("6. Uppdatera uträkning");
-            Console.WriteLine("7. Radera shape");
+            Console.WriteLine("7. Radera uträkning");
             Console.WriteLine("0: Huvudmenyn");
 
             var shapesMenuAnswer = Console.ReadLine();
@@ -190,11 +190,11 @@ namespace Calculations
                 case "7":
                     Console.WriteLine("Ange id för den uträkning du vill radera:");
                     var deleteCalculationId = Convert.ToInt32(Console.ReadLine());
-                    foreach (var calculation in _dbContext.ShapeResults)
+                    foreach (var calculation in _dbContext.CalculationResults)
                     {
                         if (calculation.Id == deleteCalculationId)
                         {
-                            _dbContext.ShapeResults.Remove(calculation);
+                            _dbContext.CalculationResults.Remove(calculation);
                             break;
                         }
                     }

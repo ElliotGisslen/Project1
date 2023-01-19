@@ -15,7 +15,7 @@ namespace Shapes.Strategy
             var returnValues = new AreaPerimiter();
             returnValues.Perimiter = a * 4;
             //returnValues.Area = Math.Sqrt(returnValues.Perimiter / 2 * ((returnValues.Perimiter / 2 - a) * (returnValues.Perimiter / 2 - b) * (returnValues.Perimiter / 2 - c)));
-            returnValues.Area = 0.5 * b * Math.Sqrt((4*a*a)-(b*b));
+            returnValues.Area = (b * c) / 2;
             return returnValues;
         }
     }

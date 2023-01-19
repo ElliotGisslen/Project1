@@ -38,11 +38,11 @@ namespace MyClassLibrary
                 {
 
                     Id = 2,
-                    Input1 = 2,
-                    Input2 = 2,
-                    Input3 = 2,
-                    Area = 1.73,
-                    Perimeter = 6,
+                    Input1 = 5,
+                    Input2 = 5,
+                    Input3 = 7,
+                    Area = 12.5,
+                    Perimeter = 17,
                     Date = DateTime.Now,
                     ShapeType = ShapeType.Triangel,
                     Shape = "Triangel"
@@ -51,12 +51,12 @@ namespace MyClassLibrary
                 {
 
                     Id = 3,
-                    Input1 = 1,
-                    Input2 = 2,
-                    Input3 = 1,
-                    Area = 4,
+                    Input1 = 13,
+                    Input2 = 24,
+                    Input3 = 10,
+                    Area = 120,
                     //0.5 * b * Math.Sqrt((4 * a * a) - (b * b))
-                    Perimeter = 6,
+                    Perimeter = 52,
                     Date = DateTime.Now,
                     ShapeType = ShapeType.Romb,
                     Shape = "Romb"
@@ -65,32 +65,15 @@ namespace MyClassLibrary
                 {
 
                     Id = 4,
-                    Input1 = 1,
-                    Input2 = 2,
-                    Input3 = 0,
-                    Area = 2,
-                    Perimeter = 6,
+                    Input1 = 12,
+                    Input2 = 8,
+                    Input3 = 6,
+                    Area = 72,
+                    Perimeter = 40,
                     Date = DateTime.Now,
                     ShapeType = ShapeType.Parallelogram,
                     Shape = "Parallelogram"
                 });
-            //builder.Entity<Room>().HasData(
-            //    new Room(RoomType.Enkelrum, 1, 15)
-            //    {
-            //        Id = 1
-            //    },
-            //    new Room(RoomType.Dubbelrum, 1, 22)
-            //    {
-            //        Id = 2
-            //    },
-            //    new Room(RoomType.Enkelrum, 1, 19)
-            //    {
-            //        Id = 3
-            //    },
-            //    new Room(RoomType.Dubbelrum, 1, 35)
-            //    {
-            //        Id = 4
-            //    });
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
